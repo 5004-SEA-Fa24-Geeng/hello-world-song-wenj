@@ -73,7 +73,7 @@ public class Greeter {
      * @return the name of the greeter
      */
     public String getName() {
-        return name
+        return name;
     }
 
     /**
@@ -125,7 +125,7 @@ public class Greeter {
     /**
      * This method is used to greet the user. It will return a greeting based on their set locality.
      * If the ascii_only flag is set to true, it will only use ascii characters. If it is set to
-     * false, it will use the unicode characters for the greeting.
+     * false, it will use the Unicode characters for the greeting.
      *
      * <p>
      * Examples:
@@ -169,7 +169,7 @@ public class Greeter {
                     greeting = String.format("%s, Ni Hao!", name);
                 } else {
                     greeting = String.format("%s, 你好!", name);
-                    // note "你好!" while is allowed in java sa unicode,
+                    // note "你好!" while is allowed in java as Unicode,
                     // most terminals don't allow non-ascii characters unless enabled
                 }
                 break;
@@ -189,19 +189,17 @@ public class Greeter {
      * @return the locality as a string
      */
     private String getLocalityString() {
-        if (locality < 1 || locality >= localityList.size()) {
+        if (locality < 1 || locality > localityList.size()) {
             return "USA";
         }
-        return localityList.get(locality);
+        return localityList.get(locality - 1);
     }
 
     /**
-     * For new objects is is often a good idea to override the hashCode method.
-     *
+     * For new objects it is often a good idea to override the hashCode method.
      * HashCodes are used in various data structures (like hashtables) to provide a 'unique'
      * identifier for an object. In this case as long as the name and locality are the same, the
      * hashcode will be the same.
-     *
      * Java assumes that if .equals is true, the hashcodes should also be the same.
      * 
      * @return the hashcode
@@ -212,7 +210,7 @@ public class Greeter {
     }
 
     /**
-     * For new objects is is often a good idea to override the equals method.
+     * For new objects it is often a good idea to override the equals method.
      *
      * In this case, we can compare two greeter objects and if the name and the locality are the
      * same, they are treated as the same object. Without this, it would actually compare the memory
@@ -235,7 +233,7 @@ public class Greeter {
 
     /**
      * This method is used to convert the object to a string. Even if you are not 'printing' the
-     * object, this is very common to override even for debugging purposes. It allows you do
+     * object, this is very common to override even for debugging purposes. It allows you to do
      * something like
      *
      * <pre>

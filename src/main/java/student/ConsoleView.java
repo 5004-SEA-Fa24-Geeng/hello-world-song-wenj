@@ -18,7 +18,7 @@ public final class ConsoleView {
     // application to
     // prevent conflicts.
     /** scanner pointing towards System.in. */
-    private static final Scanner SCANNER = new Scanner(System); // System.in is a standard input
+    private static final Scanner SCANNER = new Scanner(System.in); // System.in is a standard input
                                                                 // stream, it is used to read
                                                                 // data from the keyboard.
     /** Stores the locality lists from Greeter to prevent additional copies. */
@@ -41,7 +41,7 @@ public final class ConsoleView {
      * @return the name of the client
      */
     public static String getName() {
-        // these two combined statements are similar to input("Welcome, what is your name? "), in
+        // these two combined statements are similar to input("Welcome, what is your name?"), in
         // python
         System.out.print("Welcome, what is your name? "); // this is a print statement, notice the
                                                           // print vs println used below
@@ -57,7 +57,7 @@ public final class ConsoleView {
      * @return the locality selected by the client
      */
     public static int getLocality() {
-        System.out.println("Select a locality: ");
+        System.out.println("Select a locality:");
         for (int i = 0; i < LOCALITY_OPTIONS.size(); i++) {
             System.out.println("\t" + (i + 1) + ". " + LOCALITY_OPTIONS.get(i));
         }
@@ -74,14 +74,13 @@ public final class ConsoleView {
                 return getLocality();
             }
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input, please try again., Numbers only.");
+            System.out.println("Invalid input, please try again. Numbers only.");
             return getLocality();
         }
     }
 
     /**
      * Asks the client if they would like to be greeted again.
-     *
      * They can respond with yes, y, no, or n. If they respond with something else will continue to
      * call itself until they respond with a valid answer.
      *
@@ -104,7 +103,6 @@ public final class ConsoleView {
 
     /**
      * Currently acts as a pass through to System.out.println.
-     *
      * This is a good practice to keep all print statements in one place, so that if you need to
      * change the output, you only need to change it in one place.
      *
