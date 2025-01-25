@@ -5,17 +5,24 @@ package student;
  * https://cs5004-khoury-lionelle.github.io/hello_world/student/package-summary.html
  */
 public class Greeting {
-    private int localityID; // ID of the localit
-    private String localityName; // Name of the locality
-    private String asciiGreeting; // ASCII greeting
-    private String unicodeGreeting; // Unicode greeting
-    private String formatStr; // Format string for constructing the greeting message
+    /** int value of locality ID. */
+    private int localityID;
+    /** String value of locality name. */
+    private String localityName;
+    /** String value of ASCII greeting. */
+    private String asciiGreeting;
+    /** String value of Unicode greeting. */
+    private String unicodeGreeting;
+    /** String value of format string. */
+    private String formatStr;
 
-    // Constants for specific localities
+    /** int value of Hawaii greeting. */
     private static final int HAWAII = 1;
+    /** int value of china greeting. */
     private static final int CHINA = 3;
+    /** int value of Italy greeting. */
     private static final int ITALY = 4;
-    // Default locality ID if none is specified
+    /** int value of the DEFAULT locality. */
     private static final int DEFAULT_LOCALITY = 2;
 
     /**
@@ -147,7 +154,7 @@ public class Greeting {
     }
 
     /**
-     * Override the toString method to provide a string representation of the object
+     * Override the toString method to provide a string representation of the object.
      * @return a string representation of the object
      */
     @Override
