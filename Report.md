@@ -72,13 +72,17 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 1. Why would we want to keep interaction with the client contained to ConsoleView?
 
 It is one of the core ideas of object-oriented programming, which encourages a separation of "tasks" to different classes or objects.
-The purpose of doing so is to decouple functionalities so that the system is modularized. This improves safety, makes the system easier to maintenance.
+The purpose of doing so is to decouple functionalities so that the system is modularized. This improves safety, makes the system easier to maintain.
 
 
 2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
 
-It is possible for greeting.java to maintain a dictionary structure that holds the pairs of locality and greeting.
-So, the greet() method of greeter can use a greeting object to generate the appropriate message based on locality.
+One way to make the application more dynamic is to use an interface, which has a greet method, and have different classes 
+implementing the interface and overriding its greet method, returning appropriate greeting messages. Then, it is possible 
+to use the greeting class to handle the greeting logic, in which a HashMap can be used to maintain the relationships between 
+locality ID and the greeting message. A static block can be used to initialize the HashMap. The greeting class can have a greet method that gets the corresponding greeting message 
+object from the HashMap based on locality ID and calls the message object's greet method. Finally, the greeter class can have 
+another greet method that just returns the result of calling the greet method of the greeting class.
 
 > [!IMPORTANT]
 >  After you upload the files to your github (ideally you have been committing throughout this progress / after you answer every question) - make sure to look at your completed assignment on github/in the browser! You can make sure images are showing up/formatting is correct, etc. The TAs will actually look at your assignment on github, so it is important that it is formatted correctly.
